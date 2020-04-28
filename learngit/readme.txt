@@ -1,2 +1,2 @@
 Git is free
-Git is BAD
+Git is a distributed version control system
