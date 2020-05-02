@@ -1,0 +1,44 @@
+1.选择器
+类型type h1 { }
+类别class .box { }
+ID #unique { }
+
+2.属性选择器
+a[title] { }
+a[href="https://example.com"] { }
+
+3.伪类和伪元素
+a:hover { }
+p::first-line { }
+
+4.组合器
+4.1后代组合body article p
+.box p（p元素内部的box元素）
+4.2子代组合article > p
+ul > li（ul元素后的第一个li）
+4.3相邻同级组合p + img
+h1 + p（紧邻h1后的p元素）
+4.4一般同级组合p ~ img
+h1 ~ p（h1之后的所有p元素）
+
+5.
+块级元素通常会独立成行，而内联元素会并排显示。
+* 选择器选取所有元素
+
+6.盒子模型
+内容框 填充框 边框 边距框
+6.1块
+display: inline、display: block、display: inline-flex、display: flex
+6.2嵌入式盒
+
+7.浮动
+div:nth-of-type(1) {
+  width: 36%;
+  float: left;
+}
+footer {
+  clear: both;/*清除浮动*/
+}
+* {
+  box-sizing: border-box;/*解决布局破坏问题*/
+}
