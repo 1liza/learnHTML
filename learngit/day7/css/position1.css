@@ -1,0 +1,23 @@
+body, html {
+    margin: 0;
+}
+.title {
+    position: fixed;
+    text-align: center;
+    font: 5em sans-serif;
+    background-color: aqua;
+    top: 0em;
+    width: 100%;
+}
+.right {
+    position: relative;
+    top:7em;
+    right: 2em;
+    width: 50%;
+}
+.left {
+    position: relative;
+    top:7em;
+    left:2em;
+    width: 50%;
+}

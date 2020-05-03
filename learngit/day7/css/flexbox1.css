@@ -1,0 +1,15 @@
+body, html {
+    margin: 0;
+}
+.title {
+    position: fixed;
+    text-align: center;
+    font: 5em sans-serif;
+    background-color: aqua;
+    top: 0em;
+    width: 100%;
+}
+.content {
+    margin-top: 7em;
+    display:flex;
+}

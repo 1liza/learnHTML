@@ -1,0 +1,22 @@
+.title {
+    position: fixed;
+    text-align: center;
+    font: 5em sans-serif;
+    background-color: aqua;
+    top: 0em;
+    width: 100%;
+}
+.content {
+    margin-top: 7em;
+}
+.right {
+    float: right;
+    width: 200px;
+    background-color: bisque;
+    margin-left: 200;
+    height: 700px;
+}
+
+.left{
+    float:left
+}

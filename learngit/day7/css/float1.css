@@ -1,0 +1,20 @@
+.title {
+    position: fixed;
+    text-align: center;
+    font: 5em sans-serif;
+    background-color: aqua;
+    display: inline-block;
+    top: 0em;
+    width: 100%;
+}
+.left {
+    float: left;
+    width: 30%;
+    margin-top: 6em;
+}
+
+.right{
+    float: right;
+    width: 70%;
+    margin-top: 6em;
+}
