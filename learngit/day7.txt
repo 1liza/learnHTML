@@ -1,0 +1,7 @@
+布局模型：
+1、流动模型（Flow） 默认的
+2、浮动模型 (Float)
+3、层模型（Layer）
+3.1、相对定位(position: relative) 
+3.2、绝对定位(position: absolute)
+3.3、固定定位(position: fixed)
