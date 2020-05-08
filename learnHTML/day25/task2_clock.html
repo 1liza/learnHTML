@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="time"></p>
+    <script>
+        //假设时间为2008年1月1日星期一的3点2分2秒，显示2008年01月01日星期一 03:02:02
+        function gettime() {
+            var d = new Date()
+        var h = d.getHours()
+        var m = d.getMinutes()
+        var s = d.getSeconds()
+        var y = d.getFullYear()
+        var mon = d.getMonth()+1
+        var week = d.getDay()
+        var day = d.getDate()
+        var ans = ''
+        switch (week) {
+            case 1:
+                week = '星期一';
+            case 2:
+                week = '星期二';
+            case 3:
+                week = '星期三';
+            case 4:
+                week = '星期四';
+            case 5:
+                week = '星期五';
+            case 6:
+                week = '星期六';
+            case 7:
+                week = '星期七';
+        }
+        if (mon.length===1) {
+            mon = '0'+mon;
+        }
+        if (day.length===1) {
+            day = '0'+day;
+        }
+        if (h.length===1) {
+            h = '0'+h;
+        }
+        if (m.length===1) {
+            m = '0'+m;
+        }
+        if (s.length===1) {
+            s = '0'+s;
+        }
+        ans = y+'年'+mon+"月"+day+"日"+week+" "+h+":"+m+":"+s
+        document.getElementById("time").innerHTML = ans;
+        }
+        setInterval(gettime, 500)
+    </script>
+</body>
+</html>

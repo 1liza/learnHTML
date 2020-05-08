@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onkeyup = "keyboard(event)">
+    <input id="name" type="text">    
+    <button id="submit-btn" onclick = "showConsole()">Submit</button>
+    <script>
+        //当点击按钮 submit-btn 时，在console中输出 name 中的内容
+        //在输入过程中，如果按回车键，则同样执行上一条的需求13
+        //在输入过程中，如果按 ESC 键，则把输入框中的内容清空27
+        function showConsole() {
+            console.log(document.getElementById("name").value);
+        }
+        function keyboard(event) {
+            if (event.keyCode === 13){
+                showConsole()
+            } else {
+                if (event.keyCode === 27) {
+                    document.getElementById("name").value = ""
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>

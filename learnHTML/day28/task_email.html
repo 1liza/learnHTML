@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <input id="email-input" type="text">
+        <ul id="email-sug-wrapper" class="email-sug"></ul>
+    </div>
+    <script>
+        var point = -1;
+        var result = document.getElementById("email-sug-wrapper");
+        var postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
+        //检测键盘输入
+        document.addEventListener("input", function() {
+            var inp = document.getElementById("email-input").value.trim()//str.trim() 去除字符串的头尾空格
+            result.innerHTML = "";
+            console.log(inp)    
+            if (inp.length === 0 ){                
+                return;
+            } else if (inp.indexOf('@')===-1){
+                //input中不含@
+                tmp = inp + "@";
+                for (var a of postfixList) {
+                    result.innerHTML += "<li>"+tmp+a+"</li>";
+                } 
+            } else {
+                    //input含有@
+                    pos = inp.indexOf('@');
+                    console.log(pos);
+                    if (pos === inp.length-1) {
+                        //如果@是结尾元素 直接加上postfixList
+                        for (var a of postfixList) {
+                            result.innerHTML += "<li>"+inp+a+"</li>";
+                        }
+                    } else {
+                        //如果@不是结尾元素
+                        for (var a of postfixList) {
+                            if (a.indexOf(inp.substring(pos+1)) != -1 | inp.indexOf(a) != -1) {
+                                //a中包含输入@后面的字符 或者 输入字符比正确字符多，如123@qq.commm
+                                result.innerHTML += "<li>"+inp.substring(0,pos)+a+"</li>";
+                            }
+                        }
+                    }
+                }
+        })
+        document.addEventListener("keyup", function(e) {
+            var a = document.getElementById("email-sug-wrapper").children;
+            if (result.innerHTML === "") {
+                    return;
+            }
+            if (e.keyCode===38) {
+                //按上键 keycode查询表https://blog.csdn.net/qq_25835645/article/details/78788987
+                console.log("按上键")
+                if (point === -1) {
+                    return;
+                } else {
+                    a[point].style.backgroundColor = "white";
+                    point -= 1;
+                    if (point === -1) {return;}
+                    else {a[point].style.backgroundColor = "gray";}
+                }
+            } else if (e.keyCode === 40) {
+                //按下键
+                if (point === a.length-1) {
+                    a[point].style.backgroundColor = "gray";
+                } else {
+                    if (point != -1) {a[point].style.backgroundColor = "white";}                    
+                    point += 1;
+                    a[point].style.backgroundColor = "gray";
+                }
+
+            } else if (e.keyCode===13 | e.keyCode===108) {
+                    //按下enten键 分别对应主键盘区和数组键盘区的enter
+                    document.getElementById("email-input").value = a[point].innerHTML;
+                    point = 0;
+                    result.innerHTML = "";
+            }               
+
+        })
+    </script>
+</body>
+</html>

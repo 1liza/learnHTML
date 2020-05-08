@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="username">
+    <script>
+var result = []
+//  注册input事件
+username.addEventListener("input", function(event) {
+    result.push({
+        event  : 'input',
+        value  : this.value,
+        keyCode : event.keyCode
+    });
+})
+//  注册keydown事件
+username.addEventListener("keydown", function(event) {
+    result.push({
+        event  : 'keydown',
+        value  : this.value,
+        keyCode : event.keyCode
+    });
+});
+//  注册keyup事件
+username.addEventListener("keyup", function(event) {
+    result.push({
+        event  : 'keyup',
+        value  : this.value,
+        keyCode : event.keyCode
+    });
+});
+//  注册change事件
+username.addEventListener("change", function(event) {
+    result.push({
+        event  : 'change',
+        value  : this.value,
+        keyCode : event.keyCode
+    });
+    //  输出结果
+    console.table(result);
+});
+//  注册blur事件
+username.addEventListener("blur", function(event) {
+    result.push({
+        event  : 'blur',
+        value  : this.value,
+        keyCode : event.keyCode
+    });
+    //  输出结果
+    console.table(result);
+})
+    </script>
+</body>
+</html>

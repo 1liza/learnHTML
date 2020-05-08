@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="match-string" type="text"></input>
+    <p>match字符匹配位置<div id="str-index"></div></p>
+    <p>match字符匹配内容<div id="str-str"></div></p>
+    <p>match正则匹配多次内容<div id="reg-all"></div></p>
+    <p>match正则匹配一次内容<div id="reg-one"></div></p>
+
+    <script>
+        var str = "I LOVE HTML"     
+        var str2 = "1 plus 2 equal 3"   
+        document.addEventListener('change', function() {
+            var inp = document.getElementById("match-string").value
+            console.log(str.match(inp))//str.match(inp)返回的是数组 如果没有匹配返回null
+            document.getElementById("str-index").innerHTML = str.match(inp).index
+            //匹配后子字符串第一个元素匹配的位置，如果没有匹配出错
+            document.getElementById("str-str").innerHTML = str.match(inp)
+            //返回被匹配的子字符串，如果没有匹配出错
+            console.log(str.match(/[A-z]/g))
+            document.getElementById("reg-all").innerHTML = str.match(/[A-z]/g)
+            console.log(str.match(/[A-z]/))
+            document.getElementById("reg-one").innerHTML = str.match(/[A-z]/)
+            console.log((/HTML/).test(str));
+            console.log((/HTML/).exec(str));
+
+        })
+    </script>
+</body>
+</html>
