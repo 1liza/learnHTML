@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="100%" height="100%" version="1.1"
+xmlns="http://www.w3.org/2000/svg">
+
+<circle cx="100" cy="100" r="80" fill="gray" />
+
+<text x="100" y="40" font-size="20" fill="white" text-anchor="middle">12</text>
+<text x="170" y="110" font-size="20" fill="white"  text-anchor="middle">3</text>
+<text x="100" y="180" font-size="20" fill="white"  text-anchor="middle">6</text>
+<text x="30" y="110" font-size="20" fill="white"  text-anchor="middle">9</text>
+
+<circle cx="100" cy="100" r="5" style="stroke:red" />
+
+<line x1="100" y1="50" x2="100" y2="95" style="stroke:red"/>
+<line x1="103" y1="100" x2="133" y2="100" style="stroke:red"/>
+
+</svg>

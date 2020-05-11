@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas_clock</title>
+</head>
+<body>
+    <canvas id="canvas" width="200" height="200"></canvas>
+    <script>
+        function draw() {
+            var canvas = document.getElementById("canvas");
+            if (canvas.getContext) {
+                var ctx = canvas.getContext("2d");
+                //画圆形
+                ctx.beginPath();
+                ctx.arc(100,100, 80,0,2*Math.PI,true);
+                ctx.stroke();
+                //上色
+                ctx.fillStyle="gray";
+                ctx.fill();
+                //数字
+                ctx.fillStyle="white";
+                ctx.font="20px serif";
+                ctx.fillText("12", 90, 40);
+                ctx.fillText("3", 160, 110);
+                ctx.fillText("6", 90, 180);
+                ctx.fillText("9", 20, 110);
+                //指针
+                ctx.beginPath();
+                ctx.moveTo(100, 100);
+                ctx.lineTo(100, 50);
+                ctx.moveTo(100, 100);
+                ctx.lineTo(130, 100);
+                ctx.stroke();
+
+            }
+        }
+        draw();
+    </script>
+</body>
+</html>
